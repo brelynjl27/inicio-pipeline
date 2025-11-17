@@ -1,1 +1,17 @@
-/
+name: Hello World Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  hello_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Imprimir Hello World
+        run: echo "Hello World desde GitHub Actions!"
